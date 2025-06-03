@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #9500ff;
+  --bg: #0a0a0a;
+  --text: #e0e0e0;
+  --card: #1a1a1a;
+}
+
+body {
+  @apply bg-[#0a0a0a] text-[#e0e0e0];
+}
+
+/* For the screenshot generator page */
+.screenshot-generator-page {
+  @apply bg-[#f0f2f5] text-gray-800;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .message-bubble {
+    @apply transition-all duration-200 ease-in-out relative;
+}
+
+  .message-bubble:hover {
+    @apply scale-[1.01];
+  }
+
+  .message-bubble:hover button {
+    @apply opacity-100;
+  }
+
+  .whatsapp-bg {
+    background-color: #efeae2;
+  }
+
+  .imessage-bg {
+    background-color: #ffffff;
+  }
+
+  input[type="color"] {
+    @apply appearance-none border-none p-0 w-full h-10 rounded cursor-pointer;
+  }
+
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    @apply p-0 rounded;
+  }
+
+  input[type="color"]::-webkit-color-swatch {
+    @apply border-none rounded;
+  }
+}
