@@ -16,6 +16,115 @@ export default function Products() {
 
       {/* Products Grid */}
       <div className="space-y-16">
+          
+        {/* Excel Practice Online */}
+        <div className="bg-[#1a1a1a] rounded-xl overflow-hidden mt-16">
+          <div className="md:grid md:grid-cols-2 gap-8">
+            <div className="relative h-64 md:h-full">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#9500ff] to-[#ff00aa] opacity-20"></div>
+              <Image
+                src="/excel-practice.online.png"
+                alt="Excel Practice Online Preview"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="p-8 md:p-12 space-y-6">
+              <div className="w-12 h-12 bg-[#9500ff]/10 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8V6a4 4 0 00-8 0v2M5 8h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2z" />
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-[#e0e0e0]">Excel Practice Online</h2>
+              <p className="text-gray-400">
+                Practice your Excel skills online with real spreadsheet challenges. Perfect for students, job seekers, and anyone looking to sharpen their Excel abilities in a hands-on way.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Interactive Excel Challenges
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Real-Time Feedback
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  No Installation Needed
+                </li>
+              </ul>
+              <a
+                href="https://excel-practice.online"
+                target="_blank"
+                className="inline-block bg-[#9500ff] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#7a00d1] transition-colors"
+              >
+                Try Excel Practice Online
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Simpantok.com */}
+        <div className="bg-[#1a1a1a] rounded-xl overflow-hidden mt-16">
+          <div className="md:grid md:grid-cols-2 gap-8">
+            <div className="relative h-64 md:h-full">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#9500ff] to-[#ff00aa] opacity-20"></div>
+              <Image
+                src="/simpantok.com.png"
+                alt="Simpantok.com Preview"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="p-8 md:p-12 space-y-6">
+              <div className="w-12 h-12 bg-[#9500ff]/10 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-[#e0e0e0]">Simpantok.com</h2>
+              <p className="text-gray-400">
+                Simpantok.com helps you save and organize your favorite TikTok videos online. Access your collection anytime, anywhere, and never lose track of the content you love.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Save TikTok Videos Easily
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Organize with Folders & Tags
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <svg className="w-5 h-5 text-[#9500ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Access Anywhere, Anytime
+                </li>
+              </ul>
+              <a
+                href="https://simpantok.com"
+                target="_blank"
+                className="inline-block bg-[#9500ff] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#7a00d1] transition-colors"
+              >
+                Visit Simpantok.com
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Maze Blitz */}
         <div className="bg-[#1a1a1a] rounded-xl overflow-hidden">
           <div className="md:grid md:grid-cols-2 gap-8">
