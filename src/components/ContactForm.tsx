@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
+
+const SERVICE_ID = 'your_service_id'; // Replace with your EmailJS service ID
+const TEMPLATE_ID = 'your_template_id'; // Replace with your EmailJS template ID
+const USER_ID = 'your_public_key'; // Replace with your EmailJS public key
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -19,31 +24,25 @@ const ContactForm = () => {
     e.preventDefault();
     setIsLoading(true);
     setStatus({ type: null, message: '' });
-    
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setStatus({ type: 'success', message: 'Message sent successfully!' });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus({ 
-          type: 'error', 
-          message: data.error || 'Failed to send message. Please try again.' 
-        });
-      }
+        process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY!
+      );
+      setStatus({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      setStatus({ 
-        type: 'error', 
-        message: 'An error occurred. Please try again later.' 
+      setStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again.'
       });
     } finally {
       setIsLoading(false);
@@ -86,6 +85,7 @@ const ContactForm = () => {
         <input
           type="email"
           id="email"
+          name="email"
           required
           className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-800 rounded-md text-[#e0e0e0] focus:outline-none focus:ring-2 focus:ring-[#9500ff]"
           value={formData.email}
@@ -101,6 +101,7 @@ const ContactForm = () => {
         <input
           type="text"
           id="subject"
+          name="subject"
           required
           className="mt-1 block w-full px-3 py-2 bg-[#1a1a1a] border border-gray-800 rounded-md text-[#e0e0e0] focus:outline-none focus:ring-2 focus:ring-[#9500ff]"
           value={formData.subject}
